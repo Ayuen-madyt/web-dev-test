@@ -9,7 +9,7 @@ class HotelSerializer(serializers.ModelSerializer):
 class TripSerializer(serializers.ModelSerializer):
     class Meta:
         model = Trip
-        fields = ['time_range','rating','driver','hotel']
+        fields = ['start_time', 'delivery_time','time_range','rating','driver','hotel']
     
 class DriverSerializer(serializers.ModelSerializer):
     trips = TripSerializer(many=True, read_only=True)

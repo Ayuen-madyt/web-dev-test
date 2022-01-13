@@ -47,7 +47,8 @@ class Trip(models.Model):
     class Meta:
         ordering = ['-start_time']
 
+    # time range is the difference btwn st
     @property
     def time_range(self):
-        return self.start_time - self.delivery_time
+        return self.delivery_time - self.start_time
 
